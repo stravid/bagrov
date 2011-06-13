@@ -3,9 +3,9 @@
   baseline = function() {
     var bodyHeight, bodyOffset, bodyWidth, top, _results;
     top = 0;
-    bodyHeight = $('#bagrov-container').height();
+    bodyHeight = $('body').height();
     bodyOffset = $('#bagrov-container').offset();
-    bodyWidth = $('#bagrov-container').width();
+    bodyWidth = $('body').width();
     _results = [];
     while (!(top > bodyHeight)) {
       $('#bagrov-container').append($('<div>').css({
@@ -22,8 +22,8 @@
   };
   columns = function() {
     var bodyHeight, bodyOffset, bodyWidth, step, width, _results;
-    bodyHeight = $('#bagrov-container').height();
-    bodyWidth = $('#bagrov-container').width();
+    bodyHeight = $('body').height();
+    bodyWidth = $('body').width();
     bodyOffset = $('#bagrov-container').offset();
     width = 0;
     step = 0;
@@ -48,10 +48,7 @@
     bodyWidth = $('body').width();
     bodyOffset = $('body').offset();
     console.log(bodyHeight, bodyWidth, bodyOffset);
-    $('body').prepend($('<div id="bagrov-container">').css({
-      height: '100%',
-      width: '100%'
-    }));
+    $('body').prepend('<div id="bagrov-container">');
     baseline();
     return columns();
   });

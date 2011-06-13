@@ -1,8 +1,8 @@
 baseline = ->
   top = 0
-  bodyHeight = $('#bagrov-container').height()
+  bodyHeight = $('body').height()
   bodyOffset = $('#bagrov-container').offset()
-  bodyWidth = $('#bagrov-container').width()
+  bodyWidth = $('body').width()
 
   until top > bodyHeight
     $('#bagrov-container').append($('<div>').css({
@@ -17,8 +17,8 @@ baseline = ->
     top += 48
 
 columns = ->
-  bodyHeight = $('#bagrov-container').height()
-  bodyWidth =  $('#bagrov-container').width()
+  bodyHeight = $('body').height()
+  bodyWidth =  $('body').width()
   bodyOffset =  $('#bagrov-container').offset()
   width = 0  
   step = 0
@@ -44,10 +44,7 @@ jQuery ->
 
   console.log bodyHeight, bodyWidth, bodyOffset
   
-  $('body').prepend($('<div id="bagrov-container">').css({
-    height: '100%',
-    width: '100%'
-  }));
+  $('body').prepend('<div id="bagrov-container">');
 
   baseline()
   columns()  
