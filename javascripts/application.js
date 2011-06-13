@@ -48,7 +48,10 @@
     bodyWidth = $('body').width();
     bodyOffset = $('body').offset();
     console.log(bodyHeight, bodyWidth, bodyOffset);
-    $('body').prepend('<div id="bagrov-container">');
+    $('body').prepend($('<div id="bagrov-container">').css({
+      height: '100%',
+      width: '100%'
+    }));
     baseline();
     return columns();
   });
